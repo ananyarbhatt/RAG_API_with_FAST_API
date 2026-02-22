@@ -1,129 +1,124 @@
 <img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
-# Build a RAG API with FastAPI
+# Containerize a RAG API with Docker
 
-**Project Link:** [View Project](http://learn.nextwork.org/projects/ai-devops-api)
+**Project Link:** [View Project](http://learn.nextwork.org/projects/ai-devops-docker)
 
 **Author:** Ananya Bhat 22MIC0033  
 **Email:** ananya.bhat2022@vitstudent.ac.in
 
 ---
 
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_g3h4i5j6)
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_x7y8z9a0)
 
 ---
 
 ## Introducing Today's Project!
 
-In this project, I will demonstrate building a RAG API  I'm doing this project to learn end to end ML and Devops project
+In this project, I will demonstrate how to containerize the RAG api i have built priorly. I'm doing this project to learn containerisation and orchestration as well as key concepts fo ML and DevOps
 
 ### Key services and concepts
 
-Services I used were FAST API, UVICORN, CHROMADB, TINNYLLAMA OR OLLAMA.
+Services I used were docker. concepts I learnt include containerization to integrate the rag into a ci cd pipeline
 
 ### Challenges and wins
 
-This project took me approximately two days as i came across an error, but ti was resolved as it was a network issue. The most challenging part was figuring out the error .It was most rewarding to finish a project in two days and it was so easy to follow through
+This project took me approximately two days due to errors in between. The most challenging part was troubleshooting the error.It was most rewarding to make the applicaitona ccessible by creating containers
 
 ### Why I did this project
 
-I did this project because i want to know end to end execution fo MLx DEVOPS projects like tehse
+I did this project because i wanted to elarn abut devops in ai further
 
 ---
 
-## Setting Up Python and Ollama
+## Setting Up the RAG API
 
-In this step, I'm setting up Python and Ollama. Python is a language and Ollama is for running the LLM's locally. I need these tools because we are creating a RAG system
+In this step, I'm setting up im going to Set up your RAG API's code, database and dependencies,Set up your virtual environment,Run Ollama 
 
-### Python and Ollama setup
+### API setup and workspace
 
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_i9j0k1l2)
+In this step, I will Set up a virtual environment,Install all dependencies,Run embed.py to build the database,
+Make sure everything matches your setup
 
-### Verifying Python is working
+### Dependencies installed
 
-### Ollama and tinyllama ready
+The packages I installed are as above image 
 
-Ollama is the AI model we will be using for the project. I downloaded the tinyllama model because tinnylama is a verison of ollamaThe model will help my RAG API 
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_c9d0e1f2)
 
----
+### Local API working
 
-## Setting Up a Python Workspace
+I tested that my API works by running the command and posting the question.The local API responded with the json response above in the image. This confirms that ollama is running and we are getting accurate outputs.
 
-In this step, I'm setting up a project folder called Project1 I need it because i need to activate a python venv and install dependencies
-
-### Python workspace setup
-
-### Virtual environment
-
-A virtual environment is used to isntall dependencies seperates form other projects. I created one for this project to... Once I activate it... To create a virtual environment, I...
-
-### Dependencies
-
-The packages I installed are chromadb, fastapi for web framework, and uvicorn as the server, Ollama is used for the RAG part of the project
-
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_u1v2w3x4)
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_v5w6x7y8)
 
 ---
 
-## Setting Up a Knowledge Base
+## Installing Docker Desktop
 
-In this step, I'm creating a KB. A knowledge base is liek dataabse to store your document. I need it because teh tinyllama has only been trained on some data, and we need to give specific data to gain answers
+### Docker Desktop setup
 
+Docker Desktop is an application for containerizing an application. Containerization will help my project by alloweing this application to run on any system without dependency problems.
 
-### Knowledge base setup
+### Docker verification
 
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_t1u2v3w4)
+I verifies if docker is running with the hello world image.
 
-### Embeddings created
-
-Embeddings are numeric version fo the text. I created them by using transformers in chromadb. The db/ folder contains chrom.sqlite with has the embeddings. This is important for RAG because it searches fr similar embedding to give you an output
-
----
-
-## Building the RAG API
-
-In this step, I'm building a RAG API.
-
-### FastAPI setup
-
-### How the RAG API works
-
-My RAG API works by taking the query and converting into embeddings and comparing similar embeddings in the chroma vector db
-
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_f3g4h5i6)
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_i9j0k1l2)
 
 ---
 
-## Testing the RAG API
+## Creating the Dockerfile
 
-In this step, I'm testing my RAG API.
+Now we create the dockerfile, docker iamge and test it
 
-### Testing the API
 
-### API query breakdown
+### How the Dockerfile works
 
-I queried my API by running the command Invoke-RestMethod -Uri "http://127.0.0.1:8000/query?q=What is Kubernetes?" -Method Post
-. The command uses the POST method, which means it send the query  The API responded with Sure! Kubernezes is a comprehensive container orchestration platform that enables efficient...
+A Dockerfile is is a set of instructions that tells Docker how to build your container image. Think of it as a recipe - each line adds a layer to your image.
 
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_g3h4i5j6)
+### Containerized API test results
 
-### Swagger UI exploration
+Testing the API after containerization proved that the docker iamge is running. 
 
-Swagger UI is an interactive platform. I used it to test queries by directly executing the API call/ The best part about using Swagger UI was you dont need to manually edit the code
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_o1p2q3r4)
 
 ---
 
-## Adding Dynamic Content
+## Building and Running the Container
 
-In this project extension, I'm going to upgrade our RAG API
+### Docker image build complete
 
-### Adding the /add endpoint
+ I verified my Docker image was built successfully by docker images | Select-String rag-app.
+This confirms that my API is now containerized because it shows the altest image running is that of the rag api.
 
-![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-api_w9x0y1z2)
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_p9q0r1s2)
 
-### Dynamic content endpoint working
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_x7y8z9a0)
 
-The /add endpoint allows me to dynamically add knowledge base documents or information.This is useful because we can add it through swagger ui directly without having to manually chancge the code each time
+---
+
+## Pushing to Docker Hub
+
+Create a Docker Hub account
+
+Tag your image for Docker Hub
+
+Push your image to Docker Hub
+
+Pull and run your image from Docker Hub
+
+### Docker Hub push complete
+
+I pushed to Docker Hub by the push command, after tagging the docker container
+
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_m5n6o7p8)
+
+### Pulling from Docker Hub
+
+Pulling an image from Docker Hub means anyone can pull the docker image and use it. When I ran docker pull, Docker it pulled the docker image from the docker hub and displayed it. The difference between building locally and pulling from Docker Hub is anyone can acces it from anywhere.
+
+![Image](http://learn.nextwork.org/grateful_turquoise_festive_physalis/uploads/ai-devops-docker_f5g6h7i8)
 
 ---
 
